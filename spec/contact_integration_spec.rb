@@ -14,10 +14,3 @@ describe('contacts organizer path', {:type => :feature}) do
     expect(page).to have_content("Success!")
   end
 end
-
-# describe('the add contact path', {:type => :feature}) do
-#   it('processes the user entry and adds a new contact') do
-#     visit('')
-#
-#   end
-# end
