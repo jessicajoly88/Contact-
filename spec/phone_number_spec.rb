@@ -24,4 +24,10 @@ describe(Phone_number) do
     end
   end
 
+  describe(".all") do
+    it("is empty at first") do
+      expect(Phone_number.all()).to(eq([]))
+    end
+  end
+
 end
