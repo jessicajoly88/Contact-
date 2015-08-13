@@ -115,4 +115,14 @@ describe (Contact) do
       expect(test_contact.phone()).to(eq([test_phone]))
     end
   end
+
+  describe("#add_mail") do
+    it("adds a mailing address to the contact") do
+      test_contact = Contact.new({:first_name => "Betty",:last_name => "Boop", :job_title => "actress", :company => "Television Studio"})
+      test_mail = Mail_address.new({:street_address => "123 Test St.", :city => "Portland", :state => "OR", :zip => "97204", :type => "Work"})
+      test_contact.add_mail(test_mail)
+      expect(test_contact.mail()).to(eq([test_mail]))
+    end
+  end
+
 end
