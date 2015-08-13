@@ -91,6 +91,13 @@ describe (Contact) do
     end
   end
 
+  describe('#mail') do
+    it("initially returns an empty array of mail for the contact") do
+      test_contact = Contact.new({:first_name => "Betty",:last_name => "Boop", :job_title => "actress", :company => "Television Studio"})
+      expect(test_contact.mail()).to(eq([]))
+    end
+  end
+
   # describe("#add_email") do
   #   it("adds an email address to the contact") do
   #     test_contact = Contact.new({:first_name => "Betty",:last_name => "Boop", :job_title => "actress", :company => "Television Studio"})
