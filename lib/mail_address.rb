@@ -8,6 +8,7 @@ class Mail_address
     @state = attributes.fetch(:state)
     @zip = attributes.fetch(:zip)
     @type = attributes.fetch(:type)
+    @id = @@mail_addresses.length().+(1)
   end
 
   define_singleton_method(:all) do
@@ -21,4 +22,9 @@ class Mail_address
   define_singleton_method(:clear) do
     @@mail_addresses = []
   end
+
+  define_method(:id)do
+    @id
+  end
+
 end
