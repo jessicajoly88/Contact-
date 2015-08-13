@@ -44,4 +44,12 @@ describe(Mail_address) do
     end
   end
 
+  describe('#save') do
+    it("pushes a mail address to an array of saved mail addresses") do
+      test_mail = Mail_address.new({:street_address => "123 Test St.", :city => "Portland", :state => "OR", :zip => "97204", :type => "Work"})
+      test_mail.save()
+      expect(Mail_address.all()).to(eq([test_mail]))
+    end
+  end
+
 end

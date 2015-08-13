@@ -14,4 +14,7 @@ class Mail_address
     @@mail_addresses
   end
 
+  define_method(:save) do
+    @@mail_addresses.push(self)
+  end  
 end
