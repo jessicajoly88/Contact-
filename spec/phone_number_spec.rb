@@ -38,4 +38,12 @@ describe(Phone_number) do
     end
   end
 
+  describe('.clear') do
+    it("empties out the array") do
+      test_number = Phone_number.new({:area_code => "(503)", :number => "555-5452",:type => "Work"})
+      test_number.save()
+      expect(Phone_number.clear()).to(eq([]))
+    end
+  end
+
 end

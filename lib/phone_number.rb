@@ -16,4 +16,8 @@ class Phone_number
     @@phone_numbers.push(self)
   end
 
+  define_singleton_method(:clear) do
+    @@phone_numbers = []
+  end
+
 end
