@@ -5,6 +5,7 @@ class Email
   define_method(:initialize) do |attributes|
     @address = attributes.fetch(:address)
     @type = attributes.fetch(:type)
+    @id = @@emails.length().+(1)
   end
 
   define_singleton_method(:all) do
@@ -17,5 +18,9 @@ class Email
 
   define_singleton_method(:clear)do
     @@emails = []
+  end
+
+  define_method(:id) do
+    @id
   end
 end

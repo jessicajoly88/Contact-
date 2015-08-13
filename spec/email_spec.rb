@@ -39,4 +39,12 @@ describe(Email) do
     end
   end
 
+  describe('#id') do
+    it("returns the id of the email address") do
+      test_address = Email.new({:address =>"jessicabanana@gmail.com",:type => "Home"})
+      test_address.save()
+      expect(test_address.id()).to(eq(1))
+    end
+  end
+
 end
