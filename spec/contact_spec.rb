@@ -39,4 +39,12 @@ describe (Contact) do
     end
   end
 
+  describe("#save") do
+    it("saves new contact into the array of contacts") do
+      test_contact = Contact.new({:first_name => "Betty",:last_name => "Boop", :job_title => "actress", :company => "Television Studio"})
+      test_contact.save()
+      expect(Contact.all()).to(eq([test_contact]))
+    end
+  end
+
 end

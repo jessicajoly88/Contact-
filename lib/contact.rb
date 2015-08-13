@@ -13,4 +13,7 @@ class Contact
     @@contacts
   end
 
+  define_method(:save) do
+    @@contacts.push(self)
+  end
 end
