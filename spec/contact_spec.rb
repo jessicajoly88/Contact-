@@ -26,4 +26,11 @@ describe (Contact) do
     end
   end
 
+  describe('#company') do
+    it("returns a company") do
+      test_contact = Contact.new({:first_name => "Betty",:last_name => "Boop", :job_title => "actress", :company => "Television Studio"})
+      expect(test_contact.company()).to(eq("Television Studio"))
+    end
+  end
+
 end
