@@ -124,5 +124,4 @@ describe (Contact) do
       expect(test_contact.mail()).to(eq([test_mail]))
     end
   end
-
 end

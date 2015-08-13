@@ -62,5 +62,4 @@ class Contact
   define_method(:add_mail) do |address|
     @mail.push(address)
   end  
-
 end
