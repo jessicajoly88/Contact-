@@ -54,4 +54,14 @@ describe(Phone_number) do
     end
   end
 
+  describe('.find') do
+    it("returns the phone number by its id") do
+      test_number = Phone_number.new({:area_code => "(503)", :number => "555-5452",:type => "Work"})
+      test_number.save()
+      test_number2 = Phone_number.new({:area_code => "(503)", :number => "123-4562",:type => "Home"})
+      test_number2.save()
+      expect(Phone_number.find(test_number.id())).to(eq(test_number))        
+    end
+  end
+
 end
