@@ -10,4 +10,11 @@ describe(Email) do
     end
   end
 
+  describe('#type') do
+    it("returns the type of the email address") do
+      test_address = Email.new({:address =>"jessicabanana@gmail.com",:type => "Home"})
+      expect(test_address.type()).to(eq("Home"))
+    end
+  end
+
 end
