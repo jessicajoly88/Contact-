@@ -23,8 +23,18 @@ class Mail_address
     @@mail_addresses = []
   end
 
-  define_method(:id)do
+  define_method(:id) do
     @id
+  end
+
+  define_singleton_method(:find) do |id|
+    found_address = nil
+    @@mail_addresses.each() do |address|
+      if address.id().eql?(id.to_i())
+        found_address = address
+      end
+    end
+    found_address      
   end
 
 end

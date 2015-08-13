@@ -68,4 +68,14 @@ describe(Mail_address) do
     end
   end
 
+  describe('.find') do
+    it("returns the phone number by its id") do
+      test_mail = Mail_address.new({:street_address => "123 Test St.", :city => "Portland", :state => "OR", :zip => "97204", :type => "Work"})
+      test_mail.save()
+      test_mail2 = Mail_address.new({:street_address => "456 Duh Ave.", :city => "Vancouver", :state => "WA", :zip => "98685", :type => "Home"})
+      test_mail2.save()
+      expect(Mail_address.find(test_mail.id())).to(eq(test_mail))
+    end
+  end
+
 end
