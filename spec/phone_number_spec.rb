@@ -30,4 +30,12 @@ describe(Phone_number) do
     end
   end
 
+  describe('#save') do
+    it("pushes a phone number to an array of saved phone numbers") do
+      test_number = Phone_number.new({:area_code => "(503)", :number => "555-5452",:type => "Work"})
+      test_number.save()
+      expect(Phone_number.all()).to(eq([test_number]))
+    end
+  end
+
 end
