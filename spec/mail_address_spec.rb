@@ -52,4 +52,12 @@ describe(Mail_address) do
     end
   end
 
+  describe('.clear') do
+    it("empties out the array") do
+      test_mail = Mail_address.new({:street_address => "123 Test St.", :city => "Portland", :state => "OR", :zip => "97204", :type => "Work"})
+      test_mail.save()
+      expect(Mail_address.clear()).to(eq([]))
+    end
+  end
+
 end

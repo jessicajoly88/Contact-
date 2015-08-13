@@ -16,5 +16,9 @@ class Mail_address
 
   define_method(:save) do
     @@mail_addresses.push(self)
-  end  
+  end
+
+  define_singleton_method(:clear) do
+    @@mail_addresses = []
+  end
 end
