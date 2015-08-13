@@ -17,10 +17,10 @@ describe(Mail_address) do
     end
   end
 
-  describe('#street_address') do
-    it("returns the street address") do
+  describe('#state') do
+    it("returns the state") do
       test_mail = Mail_address.new({:street_address => "123 Test St.", :city => "Portland", :state => "OR", :zip => "97204", :type => "Work"})
-      expect(test_mail.street_address()).to(eq("123 Test St."))
+      expect(test_mail.state()).to(eq("OR"))
     end
   end
 
