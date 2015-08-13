@@ -84,12 +84,19 @@ describe (Contact) do
     end
   end
 
+  describe('#phone') do
+    it("initially returns an empty array of phone for the contact") do
+      test_contact = Contact.new({:first_name => "Betty",:last_name => "Boop", :job_title => "actress", :company => "Television Studio"})
+      expect(test_contact.phone()).to(eq([]))
+    end
+  end
+
   # describe("#add_email") do
   #   it("adds an email address to the contact") do
   #     test_contact = Contact.new({:first_name => "Betty",:last_name => "Boop", :job_title => "actress", :company => "Television Studio"})
   #     test_email = Email.new({:address =>"jessicabanana@gmail.com",:type =>"Home"})
   #     test_contact.add_email(test_email)
-  #     expect(test_contact.email()).to(eq([test_email]))
+  #     expect(test_contact.emails()).to(eq([test_email]))
     # end
   # end
 end
