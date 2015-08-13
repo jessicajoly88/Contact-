@@ -51,4 +51,8 @@ class Contact
     found_contact
   end
 
+  define_method(:add_email) do |email|
+    @emails.push(email)
+  end
+
 end
