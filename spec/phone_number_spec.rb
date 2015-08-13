@@ -46,4 +46,12 @@ describe(Phone_number) do
     end
   end
 
+  describe('#id') do
+    it("returns the id of the phone number") do
+      test_number = Phone_number.new({:area_code => "(503)", :number => "555-5452",:type => "Work"})
+      test_number.save()
+      expect(test_number.id()).to(eq(1))
+    end
+  end
+
 end
