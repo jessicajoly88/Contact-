@@ -5,6 +5,10 @@ require('mail_address')
 require('phone_number')
 
 describe (Contact) do
+  before() do
+    Contact.clear()
+  end
+
   describe('#first_name') do
     it("returns a first name") do
       test_contact = Contact.new({:first_name => "Betty",:last_name => "Boop", :job_title => "actress", :company => "Television Studio"})
@@ -44,6 +48,14 @@ describe (Contact) do
       test_contact = Contact.new({:first_name => "Betty",:last_name => "Boop", :job_title => "actress", :company => "Television Studio"})
       test_contact.save()
       expect(Contact.all()).to(eq([test_contact]))
+    end
+  end
+
+  describe('.clear') do
+    it("empties the array of contacts") do
+      test_contact = Contact.new({:first_name => "Betty",:last_name => "Boop", :job_title => "actress", :company => "Television Studio"})
+      test_contact.save()
+      expect(Contact.clear()).to(eq([]))
     end
   end
 

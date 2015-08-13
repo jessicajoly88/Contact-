@@ -2,6 +2,9 @@ require('rspec')
 require('email')
 
 describe(Email) do
+  before() do
+    Email.clear
+  end
 
   describe('#address') do
     it("returns the email address") do
