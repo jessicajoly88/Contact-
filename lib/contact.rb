@@ -55,4 +55,8 @@ class Contact
     @emails.push(email)
   end
 
+  define_method(:add_phone) do |phone|
+    @phone.push(phone)
+  end
+
 end
