@@ -10,5 +10,11 @@ describe(Phone_number) do
     end
   end
 
+  describe('#number') do
+    it("returns the number") do
+      test_number = Phone_number.new({:area_code => "(503)", :number => "555-5452",:type => "Work"})
+      expect(test_number.number()).to(eq("555-5452"))
+    end
+  end
 
 end
