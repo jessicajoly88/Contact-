@@ -47,4 +47,14 @@ describe(Email) do
     end
   end
 
+  describe('.find') do
+    it("returns the email address by its id number") do
+      test_address = Email.new({:address =>"jessicabanana@gmail.com",:type =>"Home"})
+      test_address.save()
+      test_address2 = Email.new({:address =>"testaddy@gmail.com",:type =>"Work"})
+      test_address2.save()
+      expect(Email.find(test_address.id())).to(eq(test_address))
+    end
+  end
+
 end

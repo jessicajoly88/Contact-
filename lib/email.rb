@@ -16,11 +16,21 @@ class Email
     @@emails.push(self)
   end
 
-  define_singleton_method(:clear)do
+  define_singleton_method(:clear) do
     @@emails = []
   end
 
   define_method(:id) do
     @id
+  end
+
+  define_singleton_method(:find) do |id|
+    found_email = nil
+    @@emails.each() do |email|
+      if email.id().eql?(id.to_i())
+        found_email = email
+      end
+    end
+    found_email
   end
 end
