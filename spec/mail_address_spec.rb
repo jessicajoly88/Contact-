@@ -38,4 +38,10 @@ describe(Mail_address) do
     end
   end
 
+  describe(".all") do
+    it("is empty at first") do
+      expect(Mail_address.all()).to(eq([]))
+    end
+  end
+
 end
