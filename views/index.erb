@@ -1,0 +1,26 @@
+<center>
+<h1>Welcome to the Contact Organizer!</h1>
+<br>
+<br>
+</center>
+<h3>Here are all your contacts:</h3>
+<ul>
+  <% @contacts.each() do |contact| %>
+  <li><a href="/contact/<%= contact.id() %>"><%= contact.last_name %>, <%= contact.first_name %></a></li>
+  <% end %>
+</ul>
+<br>
+<br>
+<p>Add a new contact:</p>
+<br>
+<form action="/" method="post">
+  <label for="first_name">First Name:</label>
+  <input id="first_name" name="first_name" type="text">
+  <label for="last_name">Last Name:</label>
+  <input id="last_name" name="last_name" type="text">
+  <label for="job_title">Job Title:</label>
+  <input id="job_title" name="job_title" type="text">
+  <label for="company">Company:</label>
+  <input id="company" name="company" type="text">
+  <button type= "submit">Add</button>
+</form>
