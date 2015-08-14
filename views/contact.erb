@@ -1,0 +1,68 @@
+<h1>Here are the details for this contact:</h1>
+
+<h3>
+First Name: <%= @contact.first_name %>
+<br>
+Last Name: <%= @contact.last_name %>
+<br>
+Job Title: <%= @contact.job_title %>
+<br>
+Company: <%= @contact.company %>
+<br>
+Email(s):
+<ul>
+  <% @contact.emails.each() do |email| %>
+  <li><%= email.address() %> (<%= email.type() %>)</li>
+  <% end %>
+</ul>
+<br>
+Phone Number(s):
+<ul>
+  <% @contact.phone.each() do |number| %>
+  <li><%= number.area_code() %> <%= number.number() %> (<%= number.type() %>)</li>
+  <% end %>
+</ul>
+<br>
+Mailing Address(es):
+<ul>
+  <% @contact.mail.each() do |addy| %>
+  <li><%= addy.street_address() %>, <%= addy.city() %>, <%= addy.state() %>, <%= addy.zip() %> (<%= addy.type() %>) </li>
+  <% end %>
+</ul>
+</h3>
+<br>
+<br>
+<form action="/contact/:id" method="post">
+  <label for="emails">Email Address:</label>
+  <br>
+  <input id="email_type" name="email_type" type="text" placeholder="Put email type here.">
+  <br>
+  <input id="email" name="email" type="text" placeholder="Put email address here.">
+  <br>
+  <br>
+  <label for="phone_number">Phone Number:</label>
+  <br>
+  <input id="area_code" name="area_code" type="text" placeholder="Put area code here.">
+  <br>
+  <input id="number" name="number" type="text" placeholder="Put number here.">
+  <br>
+  <input id="phone_type" name="phone_type" type="text" placeholder="Put phone type here.">
+  <br>
+  <br>
+  <label for="mailing_address">Mailing Address:</label>
+  <br>
+  <input id="street_address" name="street_address" type="text" placeholder="Put street address here.">
+  <br>
+  <input id="city" name="city" type="text" placeholder="Put city here.">
+  <br>
+  <input id="state" name="state" type="text" placeholder="Put state here.">
+  <br>
+  <input id="zip" name="zip" type="text" placeholder="Put email address here.">
+  <br>
+  <input id="mail_type" name="mail_type" type="text" placeholder="Put mail type here.">
+  <br>
+  <br>
+  <button type= "submit">Add</button>
+</form>
+
+<a href="/">Go back to Contacts</a>
