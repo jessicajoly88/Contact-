@@ -12,14 +12,14 @@ Company: <%= @contact.company %>
 Email(s):
 <ul>
   <% @contact.emails.each() do |email| %>
-  <li><%= email.address() %> (<%= email.type() %>)</li>
+  <li><%= email.address() %>, <%= email.type() %></li>
   <% end %>
 </ul>
 <br>
 Phone Number(s):
 <ul>
   <% @contact.phone.each() do |number| %>
-  <li><%= number.area_code() %> <%= number.number() %> (<%= number.type() %>)</li>
+  <li><%= number.area_code() %> <%= number.number() %> <%= number.type() %></li>
   <% end %>
 </ul>
 <br>
@@ -32,7 +32,7 @@ Mailing Address(es):
 </h3>
 <br>
 <br>
-<form action="/contact/:id" method="post">
+<form action="/contact/<%=@contact.id%>" method="post">
   <label for="emails">Email Address:</label>
   <br>
   <input id="email_type" name="email_type" type="text" placeholder="Put email type here.">
